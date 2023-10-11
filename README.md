@@ -1,5 +1,7 @@
 # LaVieAngular
 
+Frontend for the [la-vie-sping](https://github.com/tiagospeckart/la-vie-spring) server. Final project of the +Devs2Blu 2023 Angular Module.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
 
 ## Development server
