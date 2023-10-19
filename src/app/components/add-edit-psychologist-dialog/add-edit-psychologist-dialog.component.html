@@ -1,0 +1,160 @@
+<div mat-dialog-title>
+  <h1>Psychologist</h1>
+</div>
+
+<form [formGroup]="psychologistForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="form-field-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Ex: J. K. Rowling"
+          formControlName="name"
+        />
+      </mat-form-field>
+
+      <div
+        *ngIf="
+          psychologistForm.controls['name'].invalid &&
+          psychologistForm.controls['name'].touched &&
+          psychologistForm.controls['name'].dirty
+        "
+        class="error"
+      >
+        <mat-error>{{ getErrorMessage("name") }}</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Ex: example@example.com"
+          formControlName="email"
+        />
+      </mat-form-field>
+
+      <div
+        *ngIf="
+          psychologistForm.controls['email'].invalid &&
+          psychologistForm.controls['email'].touched &&
+          psychologistForm.controls['email'].dirty
+        "
+        class="error"
+      >
+        <mat-error>{{ getErrorMessage("email") }}</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Enter password"
+          formControlName="password"
+        />
+      </mat-form-field>
+
+      <div
+        *ngIf="
+          psychologistForm.controls['password'].invalid &&
+          psychologistForm.controls['password'].touched &&
+          psychologistForm.controls['password'].dirty
+        "
+        class="error"
+      >
+        <mat-error>{{ getErrorMessage("password") }}</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Ex: +1234567890"
+          formControlName="phone"
+        />
+      </mat-form-field>
+
+      <div
+        *ngIf="
+          psychologistForm.controls['phone'].invalid &&
+          psychologistForm.controls['phone'].touched &&
+          psychologistForm.controls['phone'].dirty
+        "
+        class="error"
+      >
+        <mat-error>{{ getErrorMessage("phone") }}</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field appearance="outline">
+        <mat-label>License Number</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Ex: ABC123"
+          formControlName="licenseNumber"
+        />
+      </mat-form-field>
+
+      <div
+        *ngIf="
+          psychologistForm.controls['licenseNumber'].invalid &&
+          psychologistForm.controls['licenseNumber'].touched &&
+          psychologistForm.controls['licenseNumber'].dirty
+        "
+        class="error"
+      >
+        <mat-error>{{ getErrorMessage("licenseNumber") }}</mat-error>
+      </div>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Specialization Area</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Ex: Psychology"
+          formControlName="specializationArea"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="form-field-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Biography</mat-label>
+        <textarea
+          matInput
+          placeholder="Enter biography"
+          formControlName="biography"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <div mat-dialog-actions class="actions">
+    <button mat-raised-button [mat-dialog-close]="false" type="button">
+      Cancel
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [mat-dialog-close]="true"
+    >
+      {{ data ? "Update" : "Add" }}
+    </button>
+  </div>
+</form>

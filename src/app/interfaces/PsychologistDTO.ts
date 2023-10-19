@@ -1,3 +1,5 @@
+import { Status } from "../enums/Status";
+
 export default interface PsychologistDTO {
   createdAt: string;
   createdBy: string;

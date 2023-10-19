@@ -1,3 +1,4 @@
+import { Status } from "../enums/Status";
 import { SessionInPsychologistListDTO } from "./SessionInPsychologistDTO";
 
 export default interface PsychologistGetDTO {

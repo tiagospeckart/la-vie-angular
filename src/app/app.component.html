@@ -1,2 +1,22 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<div class="wrapper">
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Psychology Clinic ManagementS</span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" autosize>
+    <mat-sidenav #sidenav mode="side">
+      <mat-nav-list class="nav-list">
+        <a mat-list-item routerLink="/psychologist">Psychologists</a>
+        <a mat-list-item routerLink="/client">Clients</a>
+        <a mat-list-item routerLink="/session">Sessions</a>
+        <a mat-list-item routerLink="/admin">Admin</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
